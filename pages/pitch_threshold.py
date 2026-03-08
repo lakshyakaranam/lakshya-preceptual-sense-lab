@@ -66,7 +66,7 @@ def student_build_pitch_intervals_audio(
     amplitude: float,
     target_index: int,
 ) -> list[bytes]:
-    """TODO (student): Build one 3AFC trial audio set for pitch discrimination.
+    """TODO: Build one 3AFC trial audio set for pitch discrimination.
 
     Why this function exists:
         Each trial requires three tones where only one differs in pitch. This helper

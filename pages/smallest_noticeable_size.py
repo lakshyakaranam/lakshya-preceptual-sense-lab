@@ -41,7 +41,7 @@ ORIENTATIONS = ["Up", "Down", "Left", "Right"]
 
 
 def student_next_size_index(*, current_index: int, is_correct: bool, max_index: int) -> int:
-    """TODO (student): Compute the next adaptive size index for the staircase.
+    """TODO: Compute the next adaptive size index for the staircase.
 
     Why this function exists:
         This is the core adaptive rule for the visual acuity task. The page calls it
@@ -73,7 +73,7 @@ def student_build_trial_log_row(
     correct_orientation: str,
     response: str,
 ) -> dict[str, str | int | float]:
-    """TODO (student): Build a complete, standardized row for the trial log table.
+    """TODO: Build a complete, standardized row for the trial log table.
 
     Why this function exists:
         The experiment needs a clean row per trial for grading and analysis. This
@@ -102,7 +102,7 @@ def student_build_trial_log_row(
 def student_validate_screen_geometry(
     *, distance_cm: float, screen_width_mm: float, screen_width_px: int
 ) -> bool:
-    """TODO (student): Validate whether screen-geometry inputs are usable.
+    """TODO: Validate whether screen-geometry inputs are usable.
 
     Why this function exists:
         MAR calculations rely on physically meaningful geometry values. Invalid
@@ -125,7 +125,7 @@ def student_validate_screen_geometry(
 
 
 def student_compute_mar_arcmin(size_px: int, mm_per_px: float, distance_cm: float) -> float:
-    """TODO (student): Compute MAR (minimum angle of resolution) in arcminutes.
+    """TODO: Compute MAR (minimum angle of resolution) in arcminutes.
 
     Why this function exists:
         Pixel size alone is device-dependent; MAR converts that size into a vision
@@ -156,7 +156,7 @@ def student_format_trial_log_row(
     correct_orientation: str,
     response: str,
 ) -> dict[str, str | int | float]:
-    """TODO (student): Wrapper/formatter for a standardized trial-log row.
+    """TODO: Wrapper/formatter for a standardized trial-log row.
 
     Why this function exists:
         In many real codebases, one helper computes values and another helper

@@ -65,7 +65,7 @@ def student_build_gap_intervals_audio(
     target_index: int,
     seed: int,
 ) -> list[bytes]:
-    """TODO (student): Build one 3AFC trial audio set for gap detection.
+    """TODO: Build one 3AFC trial audio set for gap detection.
 
     Why this function exists:
         The listener must compare three intervals where only one contains the silent

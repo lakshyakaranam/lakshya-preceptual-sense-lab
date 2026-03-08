@@ -67,7 +67,7 @@ def student_build_amplitude_intervals_audio(
     reference_hz: int,
     target_index: int,
 ) -> list[bytes]:
-    """TODO (student): Build one 3AFC trial audio set for amplitude discrimination.
+    """TODO: Build one 3AFC trial audio set for amplitude discrimination.
 
     Why this function exists:
         Each trial needs exactly three candidate sounds with one target interval.

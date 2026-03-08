@@ -14,6 +14,9 @@ Students should edit only files in `pages/`:
 - experiment-specific TODOs in page files
 - shared 3AFC TODOs in `pages/_shared_3afc_student.py`
 
+Every required change is marked with a `TODO` docstring and guarded by
+`NotImplementedError`; completing those TODOs unlocks the pages.
+
 Do not rename function signatures unless an instructor explicitly asks.
 
 ## Assignment File Map

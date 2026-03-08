@@ -26,7 +26,7 @@ def shared_student_apply_reversal_update(
     min_level: float,
     max_level: float,
 ) -> tuple[float, int]:
-    """Apply one 2-down/1-up staircase update.
+    """TODO: Apply one 2-down/1-up staircase update.
 
     Inputs:
         current_level: current adaptive stimulus level.
@@ -50,7 +50,7 @@ def shared_student_apply_reversal_update(
 def shared_student_plot_staircase(
     history: list[dict], threshold: float, y_label: str, title: str
 ) -> None:
-    """Plot the staircase trace for the given history.
+    """TODO: Plot the staircase trace for the given history.
 
     Expected plot content:
         - X-axis: trial number.
@@ -65,7 +65,7 @@ def shared_student_plot_staircase(
 
 
 def shared_student_build_three_interval_targets(*, target_index: int) -> list[bool]:
-    """Build a length-3 target mask with exactly one `True` entry.
+    """TODO: Build a length-3 target mask with exactly one `True` entry.
 
     Example:
         target_index=1 -> [False, True, False]
@@ -83,7 +83,7 @@ def shared_student_update_staircase_state(
     min_level: float,
     max_level: float,
 ) -> tuple[float, int]:
-    """Reusable helper that keeps staircase behavior consistent.
+    """TODO: Reusable helper that keeps staircase behavior consistent.
 
     This can wrap or share logic with `shared_student_apply_reversal_update`.
     """
@@ -93,7 +93,7 @@ def shared_student_update_staircase_state(
 def shared_student_estimate_threshold_from_reversals(
     *, reversals: list[float], fallback_level: float, tail_count: int = 4
 ) -> float:
-    """Estimate threshold using the trailing reversal points.
+    """TODO: Estimate threshold using the trailing reversal points.
 
     Recommended behavior:
         - When there are enough reversals, average the last `tail_count` values.
@@ -103,7 +103,7 @@ def shared_student_estimate_threshold_from_reversals(
 
 
 def shared_student_compute_recent_accuracy(history: list[dict], window: int = 12) -> float:
-    """Compute a trailing percent-correct accuracy metric.
+    """TODO: Compute a trailing percent-correct accuracy metric.
 
     Output should be a percentage in the `[0, 100]` range.
     """
@@ -111,7 +111,7 @@ def shared_student_compute_recent_accuracy(history: list[dict], window: int = 12
 
 
 def shared_student_validate_audio_params(*, amplitude: float, stimulus_value: float) -> bool:
-    """Validate amplitude and stimulus-specific numeric values.
+    """TODO: Validate amplitude and stimulus-specific numeric values.
 
     Returns:
         `True` when inputs are in safe ranges, otherwise `False`.
@@ -122,7 +122,7 @@ def shared_student_validate_audio_params(*, amplitude: float, stimulus_value: fl
 def shared_student_plot_staircase_with_threshold(
     *, history: list[dict], threshold: float, y_label: str, title: str
 ) -> None:
-    """Wrapper that draws the staircase and highlights the threshold.
+    """TODO: Wrapper that draws the staircase and highlights the threshold.
 
     Hint:
         Call `shared_student_plot_staircase(...)` internally to avoid duplicate code.
