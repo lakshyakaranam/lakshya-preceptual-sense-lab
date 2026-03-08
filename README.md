@@ -26,6 +26,9 @@ Streamlit exercises for vision and hearing thresholds. All student work happens 
 - No `NotImplementedError` remains in `pages/`.
 - Pages load without crashes; bounds checks and clamps are in place.
 - Lint and tests pass.
+- Contrast page reports threshold %, log CS, and an estimated per-channel bit depth.
+- 3AFC tasks stop after 6 reversals and use the last 4 to estimate the threshold.
+- 3AFC pages should plot trial index vs. level with correct/incorrect markers and a threshold line.
 
 ## Documentation
 - Setup: `docs/install.md`

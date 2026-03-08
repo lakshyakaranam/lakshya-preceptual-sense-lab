@@ -1,3 +1,4 @@
+import math
 import random
 
 import streamlit as st
@@ -226,11 +227,13 @@ with st.container(border=True):
 
 threshold_pct = float(st.session_state["greyscale_pelli_threshold_pct"])
 log_cs = student_compute_log_contrast_sensitivity(threshold_pct)
+bit_depth_est = max(1, math.ceil(math.log2(100.0 / max(threshold_pct, 1e-6))))
 
 with st.container(border=True):
     col_1, col_2 = st.columns(2)
     col_1.metric("Estimated Contrast Threshold (%)", f"{threshold_pct:.2f}")
     col_2.metric("Estimated log Contrast Sensitivity", f"{log_cs:.2f}")
+    st.metric("Estimated Bit Depth (per channel)", bit_depth_est)
     if finished:
         st.success("Pelli-style run complete.")
 
