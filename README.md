@@ -1,10 +1,4 @@
-# Health Sensing
-
-Health Sensing is a Streamlit lab app used for beginner-friendly vision and hearing
-psychophysics assignments.
-
-This repository is intentionally scaffolded so students implement a focused set of
-TODO functions instead of building the full app from scratch.
+# Perceptual Sense Lab
 
 ## First 10 Minutes
 
