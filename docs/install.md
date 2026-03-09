@@ -96,12 +96,6 @@ Run tests:
 uv run pytest
 ```
 
-Run lint checks:
-
-```sh
-uv run ruff check .
-```
-
 ## 7) Troubleshooting
 
 ## `uv` command not found
