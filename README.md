@@ -35,3 +35,5 @@ Streamlit exercises for vision and hearing thresholds. All student work happens 
 - Assignment scope: `docs/assignment.md`
 - Function guidance: `docs/student_functions.md`
 - Architecture: `docs/app_logic.md`
+
+Please star this repo for good luck!
