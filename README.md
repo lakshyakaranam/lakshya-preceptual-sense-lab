@@ -1,6 +1,6 @@
 # Perceptual Sense Lab
 
-Streamlit exercises for vision and hearing thresholds. All student work happens in `pages/`.
+Streamlit exercises for vision and hearing thresholds. All student work happens in `pages/`. **You do not need to use Flutter for this project. Only edit edit functions in this repository & report your findings**.
 
 ## Quick Start
 - Install tools: see `docs/install.md`.
