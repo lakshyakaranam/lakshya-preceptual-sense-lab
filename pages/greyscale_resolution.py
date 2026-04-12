@@ -54,7 +54,24 @@ def student_build_preview_triplets(
 
     If `rows <= 0` or `letters_pool` is empty, return an empty list.
     """
-    raise NotImplementedError("Not implemented yet; follow the docstring guidance.")
+
+
+    letter_list = []
+    if rows > 0 and letters_pool:
+        num_letters_pool = len(letters_pool)
+        random.seed(seed) # set seed
+        for _ in range(rows):
+            row_of_letters = ""
+            # repeats to create "rows" number of rows.
+            for _ in range(3):
+                # repeats to create 3 columns (aka 3 letters in each row)
+                index = random.randint(0, (num_letters_pool - 1)) # generate a random number
+                new_letter = letters_pool[index] # letter located at that index in "letters_pool"
+                row_of_letters += new_letter # add to string
+
+            letter_list.append(row_of_letters)
+
+    return letter_list
 
 
 def student_compute_contrast_levels(*, rows: int, step_log10: float) -> list[float]:
@@ -63,7 +80,13 @@ def student_compute_contrast_levels(*, rows: int, step_log10: float) -> list[flo
     Use `contrast_percent = 100 * 10 ** (-(row_index * step_log10))` for
     row_index 0..rows‑1. If `rows <= 0`, return an empty list.
     """
-    raise NotImplementedError("Not implemented yet; follow the docstring guidance.")
+    contrast_list = []
+    if rows > 0:
+        for row_index in range(rows):
+            contrast_percent = 100 * 10 ** (-(row_index * step_log10))
+            contrast_list.append(contrast_percent)
+
+    return contrast_list
 
 
 def student_advance_contrast_state(
@@ -77,7 +100,15 @@ def student_advance_contrast_state(
     Return `(next_index, finished)`. Finish if `response_yes` is False or when
     advancing goes beyond `total_levels - 1`. Clamp `next_index` to valid range.
     """
-    raise NotImplementedError("Not implemented yet; follow the docstring guidance.")
+    next_index = trial_index + 1
+    total_index = total_levels - 1
+    finished = False
+
+    if response_yes is False or next_index > total_index:
+        finished = True
+        next_index = min(next_index, total_index)
+
+    return (next_index, finished)
 
 
 def student_compute_log_contrast_sensitivity(threshold_percent: float) -> float:
@@ -86,7 +117,10 @@ def student_compute_log_contrast_sensitivity(threshold_percent: float) -> float:
     Use `log10(1 / (threshold_percent / 100))` and guard against zero or
     negative thresholds to avoid math errors.
     """
-    raise NotImplementedError("Not implemented yet; follow the docstring guidance.")
+    log_contrast_sens = 0.0
+    if threshold_percent <= 0:
+        log_contrast_sens = math.log10(1 / (threshold_percent / 100))
+    return log_contrast_sens
 
 
 with st.expander("Assignment TODOs (Edit This Page)"):
