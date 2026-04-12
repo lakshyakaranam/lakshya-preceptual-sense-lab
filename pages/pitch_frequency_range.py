@@ -57,8 +57,24 @@ def student_estimate_audible_bounds(
     Pair the frequencies marked as heard and return the min/max. If no probes
     were heard, return a sensible fallback such as the configured default.
     """
-    raise NotImplementedError("Not implemented yet; follow the docstring guidance.")
+    max_tone = 0
+    min_tone = float('inf')
+    for i in range(len(probe_history_hz)):
+        if heard_flags[i]:
+            # Paired - now find max/min values
+            tone = probe_history_hz[i]
+            if tone > max_tone:
+                # find max
+                max_tone = tone
 
+            if tone < min_tone:
+                min_tone = tone
+
+    if True not in heard_flags:
+        min_tone = default_frequency
+        max_tone = default_frequency
+
+    return (min_tone, max_tone)
 
 def student_validate_audio_params(*, frequency_hz: int, amplitude: float) -> bool:
     """TODO: ensure requested playback parameters stay within config limits.
@@ -66,8 +82,11 @@ def student_validate_audio_params(*, frequency_hz: int, amplitude: float) -> boo
     Return `True` when `frequency_hz` and `amplitude` fall inside the configured
     range, otherwise return `False`.
     """
-    raise NotImplementedError("Not implemented yet; follow the docstring guidance.")
-
+    in_limits = False
+    if int(cfg["frequency_hz"]["min"]) <= frequency_hz <= int(cfg["frequency_hz"]["max"]):
+        if float(cfg["playback_amplitude"]["min"]) <= amplitude <= float(cfg["playback_amplitude"]["max"]):
+            in_limits = True
+    return in_limits
 
 with st.expander("Assignment TODOs (Edit This Page)"):
     st.markdown(
