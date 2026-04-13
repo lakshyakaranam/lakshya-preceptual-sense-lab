@@ -86,7 +86,23 @@ def student_build_gap_intervals_audio(
         - Keep amplitude consistent across all three clips.
         - Use deterministic seeds so repeated runs are reproducible.
     """
-    raise NotImplementedError("Not implemented yet; follow the docstring guidance.")
+    gaps_vals = []
+    for i in range(3):
+        if i == target_index:
+            gaps_vals.append(gap_ms)
+        else:
+            gaps_vals.append(0)
+
+    wav_payloads = []
+    for i, gap in enumerate(gaps_vals):
+        # use enumerate bc we need both the index + value assigned to that index
+        wav = noise_burst_with_gap_wav(duration_s = float(cfg["playback"]["burst_duration_s"]),
+                                       gap_ms = gap,
+                                       amplitude = amplitude,
+                                       seed = seed + i)
+        wav_payloads.append(wav)
+    return wav_payloads
+
 
 
 def student_apply_reversal_update(
@@ -99,7 +115,7 @@ def student_apply_reversal_update(
     min_level: float,
     max_level: float,
 ) -> tuple[float, int]:
-    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`."""
+    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`.""" # complete
     return shared_student_apply_reversal_update(
         current_level=current_level,
         step=step,
@@ -112,7 +128,7 @@ def student_apply_reversal_update(
 
 
 def student_plot_staircase(history: list[dict], threshold: float, y_label: str, title: str) -> None:
-    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`."""
+    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`.""" # complete
     shared_student_plot_staircase(
         history=history,
         threshold=threshold,
@@ -122,7 +138,7 @@ def student_plot_staircase(history: list[dict], threshold: float, y_label: str, 
 
 
 def student_build_three_interval_targets(*, target_index: int) -> list[bool]:
-    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`."""
+    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`.""" # complete
     return shared_student_build_three_interval_targets(target_index=target_index)
 
 
@@ -136,7 +152,7 @@ def student_update_staircase_state(
     min_level: float,
     max_level: float,
 ) -> tuple[float, int]:
-    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`."""
+    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`.""" # complete
     return shared_student_update_staircase_state(
         current_level=current_level,
         step=step,
@@ -151,7 +167,7 @@ def student_update_staircase_state(
 def student_estimate_threshold_from_reversals(
     *, reversals: list[float], fallback_level: float, tail_count: int = 4
 ) -> float:
-    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`."""
+    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`.""" # complete
     return shared_student_estimate_threshold_from_reversals(
         reversals=reversals,
         fallback_level=fallback_level,
@@ -160,19 +176,19 @@ def student_estimate_threshold_from_reversals(
 
 
 def student_compute_recent_accuracy(history: list[dict], window: int = 12) -> float:
-    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`."""
+    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`.""" # complete
     return shared_student_compute_recent_accuracy(history=history, window=window)
 
 
 def student_validate_audio_params(*, amplitude: float, gap_ms: float) -> bool:
-    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`."""
+    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`.""" 
     return shared_student_validate_audio_params(amplitude=amplitude, stimulus_value=gap_ms)
 
 
 def student_plot_staircase_with_threshold(
     *, history: list[dict], threshold: float, y_label: str, title: str
 ) -> None:
-    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`."""
+    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`.""" # complete
     shared_student_plot_staircase_with_threshold(
         history=history,
         threshold=threshold,
