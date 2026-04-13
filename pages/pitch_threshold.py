@@ -95,13 +95,13 @@ def student_build_pitch_intervals_audio(
             wav = single_tone_wav(
                 frequency_hz= reference_hz + delta_hz,
                 duration_s=float(cfg["tone_duration_s"]),
-                amplitude=amplitude,
+                amplitude=amplitude
             )
         else:
             wav = single_tone_wav(
                 frequency_hz= reference_hz,
                 duration_s=float(cfg["tone_duration_s"]),
-                amplitude=amplitude,
+                amplitude=amplitude
             )
         wav_payloads.append(wav)
     return wav_payloads
