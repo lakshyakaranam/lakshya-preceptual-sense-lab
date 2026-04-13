@@ -86,7 +86,25 @@ def student_build_pitch_intervals_audio(
         - One clip at `reference_hz + delta_hz`.
         - Keep duration and amplitude consistent across intervals.
     """
-    raise NotImplementedError("Not implemented yet; follow the docstring guidance.")
+    target_intervals = shared_student_build_three_interval_targets(target_index = target_index)
+
+    wav_payloads = []
+
+    for intervals in target_intervals:
+        if intervals is True:
+            wav = single_tone_wav(
+                frequency_hz= reference_hz + delta_hz,
+                duration_s=float(cfg["tone_duration_s"]),
+                amplitude=amplitude,
+            )
+        else:
+            wav = single_tone_wav(
+                frequency_hz= reference_hz,
+                duration_s=float(cfg["tone_duration_s"]),
+                amplitude=amplitude,
+            )
+        wav_payloads.append(wav)
+    return wav_payloads
 
 
 def student_apply_reversal_update(
@@ -99,7 +117,7 @@ def student_apply_reversal_update(
     min_level: float,
     max_level: float,
 ) -> tuple[float, int]:
-    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`."""
+    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`.""" # complete
     return shared_student_apply_reversal_update(
         current_level=current_level,
         step=step,
@@ -112,7 +130,7 @@ def student_apply_reversal_update(
 
 
 def student_plot_staircase(history: list[dict], threshold: float, y_label: str, title: str) -> None:
-    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`."""
+    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`.""" # complete
     shared_student_plot_staircase(
         history=history,
         threshold=threshold,
@@ -122,7 +140,7 @@ def student_plot_staircase(history: list[dict], threshold: float, y_label: str, 
 
 
 def student_build_three_interval_targets(*, target_index: int) -> list[bool]:
-    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`."""
+    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`.""" # complete
     return shared_student_build_three_interval_targets(target_index=target_index)
 
 
@@ -136,7 +154,7 @@ def student_update_staircase_state(
     min_level: float,
     max_level: float,
 ) -> tuple[float, int]:
-    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`."""
+    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`.""" # complete
     return shared_student_update_staircase_state(
         current_level=current_level,
         step=step,
@@ -151,7 +169,7 @@ def student_update_staircase_state(
 def student_estimate_threshold_from_reversals(
     *, reversals: list[float], fallback_level: float, tail_count: int = 4
 ) -> float:
-    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`."""
+    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`.""" # complete
     return shared_student_estimate_threshold_from_reversals(
         reversals=reversals,
         fallback_level=fallback_level,
@@ -160,12 +178,12 @@ def student_estimate_threshold_from_reversals(
 
 
 def student_compute_recent_accuracy(history: list[dict], window: int = 12) -> float:
-    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`."""
+    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`.""" # complete
     return shared_student_compute_recent_accuracy(history=history, window=window)
 
 
 def student_validate_audio_params(*, amplitude: float, reference_hz: int) -> bool:
-    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`."""
+    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`.""" # complete
     return shared_student_validate_audio_params(
         amplitude=amplitude,
         stimulus_value=float(reference_hz),
@@ -175,7 +193,7 @@ def student_validate_audio_params(*, amplitude: float, reference_hz: int) -> boo
 def student_plot_staircase_with_threshold(
     *, history: list[dict], threshold: float, y_label: str, title: str
 ) -> None:
-    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`."""
+    """Shared 3AFC TODO: implement in `pages/_shared_3afc_student.py`.""" # complete
     shared_student_plot_staircase_with_threshold(
         history=history,
         threshold=threshold,
